@@ -40,7 +40,7 @@ import com.charlescozad.barcodedemo.preferences.SettingsActivity
 import com.charlescozad.barcodedemo.preferences.SettingsActivity.LaunchSource
 import java.io.IOException
 
-/** Live preview demo for ML Kit APIs. */
+
 @KeepName
 class LivePreviewActivity :
   AppCompatActivity(), OnItemSelectedListener, CompoundButton.OnCheckedChangeListener {
