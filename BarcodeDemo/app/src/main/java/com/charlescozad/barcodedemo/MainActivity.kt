@@ -21,6 +21,12 @@ class MainActivity : ComponentActivity() {
             val barcodeScanner = Intent(this, LivePreviewActivity::class.java)
             startActivity(barcodeScanner)
         }
+
+        val button2: Button = findViewById(R.id.barcodeButton2)
+        button2.setOnClickListener {
+            val barcodeScanner = Intent(this, LiveCameraBarcode::class.java)
+            startActivity(barcodeScanner)
+        }
         if (!allRuntimePermissionsGranted()) {
             getRuntimePermissions()
         }

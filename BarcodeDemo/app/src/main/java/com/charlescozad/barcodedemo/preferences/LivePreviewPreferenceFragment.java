@@ -18,11 +18,9 @@ package com.charlescozad.barcodedemo.preferences;
 
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
-import android.widget.Toast;
 import androidx.annotation.StringRes;
 import com.charlescozad.barcodedemo.camera.CameraSource;
 import com.charlescozad.barcodedemo.camera.CameraSource.SizePair;

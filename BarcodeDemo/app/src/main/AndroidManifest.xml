@@ -36,6 +36,11 @@
             android:theme="@style/AppTheme">
         </activity>
         <activity
+            android:name=".LiveCameraBarcode"
+            android:exported="false"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
             android:name=".preferences.SettingsActivity"
             android:exported="false"
             android:theme="@style/AppTheme">
