@@ -1,19 +1,3 @@
-/*
- * Copyright 2020 Google LLC. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.charlescozad.barcodedemo.barcodescanner
 
 import android.content.Context
@@ -29,26 +13,26 @@ import com.google.mlkit.vision.common.InputImage
 import com.charlescozad.barcodedemo.camera.GraphicOverlay
 
 /** Barcode Detector Demo. */
-class BarcodeScannerProcessor(context: Context, zoomCallback: ZoomCallback?) :
+class UPCBarcodeScannerProcessor(context: Context, zoomCallback: ZoomCallback?) :
   VisionProcessorBase<List<Barcode>>(context) {
 
   private var barcodeScanner: BarcodeScanner
 
   init {
-    // Note that if you know which format of barcode your app is dealing with, detection will be
-    // faster to specify the supported barcode formats one by one, e.g.
-    // BarcodeScannerOptions.Builder()
-    //     .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
-    //     .build();
     barcodeScanner =
       if (zoomCallback != null) {
         val options =
           BarcodeScannerOptions.Builder()
+            .setBarcodeFormats(Barcode.FORMAT_UPC_A, Barcode.FORMAT_UPC_E )
             .setZoomSuggestionOptions(ZoomSuggestionOptions.Builder(zoomCallback).build())
             .build()
         BarcodeScanning.getClient(options)
       } else {
-        BarcodeScanning.getClient()
+        val options =
+          BarcodeScannerOptions.Builder()
+            .setBarcodeFormats(Barcode.FORMAT_UPC_A, Barcode.FORMAT_UPC_E )
+            .build()
+        BarcodeScanning.getClient(options)
       }
   }
 

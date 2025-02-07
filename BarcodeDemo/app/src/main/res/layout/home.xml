@@ -24,7 +24,7 @@
             android:id="@+id/barcodeButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Barcode Demo 2" />
+            android:text="UPC Barcode Demo" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

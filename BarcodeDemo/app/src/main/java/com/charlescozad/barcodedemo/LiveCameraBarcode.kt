@@ -13,7 +13,7 @@ import com.google.mlkit.vision.barcode.ZoomSuggestionOptions.ZoomCallback
 import com.charlescozad.barcodedemo.camera.CameraSource
 import com.charlescozad.barcodedemo.camera.CameraSourcePreview
 import com.charlescozad.barcodedemo.camera.GraphicOverlay
-import com.charlescozad.barcodedemo.barcodescanner.BarcodeScannerProcessor
+import com.charlescozad.barcodedemo.barcodescanner.UPCBarcodeScannerProcessor
 import com.charlescozad.barcodedemo.preferences.PreferenceUtils
 import com.charlescozad.barcodedemo.preferences.SettingsActivity
 import com.charlescozad.barcodedemo.preferences.SettingsActivity.LaunchSource
@@ -81,7 +81,7 @@ class LiveCameraBarcode :
         zoomCallback = ZoomCallback { zoomLevel: Float -> cameraSource!!.setZoom(zoomLevel) }
       }
       cameraSource!!.setMachineLearningFrameProcessor(
-        BarcodeScannerProcessor(this, zoomCallback)
+        UPCBarcodeScannerProcessor(this, zoomCallback)
       )
     } catch (e: Exception) {
       Log.e(TAG, "Can not create barcode image processor: ", e)
